@@ -1,0 +1,12 @@
+.userinfo {
+  width: 100%;
+}
+
+.userinfo-avatar {
+  width: 100%;
+  height: 325px;
+}
+.userinfo-nickname {
+  text-align: center;
+
+}

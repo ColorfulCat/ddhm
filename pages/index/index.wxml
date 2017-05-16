@@ -1,11 +1,13 @@
 <!--index.wxml-->
-<view class="container">
+<view>
+<image class="indexImage" src="{{indexImage}}" mode="aspectFit" bindtap="showImage" ></image>
+
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
-  <button class="buttontop">button</button>
+  <button class="buttontop tappable"  ontap="gotoFace">进入人脸识别</button>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <!--<text class="user-motto">{{motto}}</text>-->
   </view>
 </view>

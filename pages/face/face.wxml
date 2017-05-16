@@ -1,0 +1,2 @@
+<!--index.wxml-->  
+<image src="{{tempFilePaths }}" bindtap="chooseimage" mode="aspectFit" style="width: 100%; height: 650rpx"/>  

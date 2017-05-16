@@ -5,6 +5,11 @@
   align-items: center;
 }
 
+.indexImage {
+  width: 100%;
+  height: 300px;
+}
+
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;

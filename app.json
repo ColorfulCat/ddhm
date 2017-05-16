@@ -2,13 +2,15 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/settings/settings"
+    "pages/settings/settings",
+    "pages/face/face",
+    "pages/image/image"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#ff4500",
-    "navigationBarTitleText": "我是标题啦啦啦",
-    "navigationBarTextStyle":"white"
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "大大花猫",
+    "navigationBarTextStyle":"black"
   },
   "tabBar": {
     "color": "#a9b7b7",
