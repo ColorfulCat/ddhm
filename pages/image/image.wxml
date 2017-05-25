@@ -1,3 +1,0 @@
-<view>
-<image class="bigImage" src="{{bigImage}}" mode="aspectFit"></image>
-</view>

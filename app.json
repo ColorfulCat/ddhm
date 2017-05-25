@@ -1,41 +1,84 @@
 {
-  "pages":[
+  "pages": [
+
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/settings/settings",
+    "pages/about/about",
+    "pages/todos/todos",
+    "pages/user/user",
+    "pages/pay/pay",
+    "pages/setting/setting",
     "pages/face/face",
-    "pages/image/image"
+
+    "example/index",
+
+    "example/button/button",
+    "example/list/list",
+    "example/input/input",
+    "example/slider/slider",
+    "example/uploader/uploader",
+
+    "example/article/article",
+    "example/badge/badge",
+    "example/flex/flex",
+    "example/footer/footer",
+    "example/gallery/gallery",
+    "example/grid/grid",
+    "example/icons/icons",
+    "example/loadmore/loadmore",
+    "example/panel/panel",
+    "example/preview/preview",
+    "example/progress/progress",
+
+    "example/actionsheet/actionsheet",
+    "example/dialog/dialog",
+    "example/msg/msg",
+    "example/msg/msg_success",
+    "example/msg/msg_fail",
+    "example/picker/picker",
+    "example/toast/toast",
+
+    "example/navbar/navbar",
+    "example/tabbar/tabbar",
+
+    "example/searchbar/searchbar"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#ffffff",
+  "window": {
+    "navigationBarTextStyle": "black",
     "navigationBarTitleText": "大大花猫",
-    "navigationBarTextStyle":"black"
-  },
-  "tabBar": {
-    "color": "#a9b7b7",
-    "selectedColor": "#11cd6e",
-    "borderStyle": "blue",
-    "backgroundColor":"#ffffff",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#f8f8f8"
+  }, 
+  "tabBar": { 
+    "color": "#ddd", 
+    "selectedColor": "#3cc51f", 
+    "backgroundColor": "#fff", 
+    "borderStyle": "black",
     "list": [
       {
-        "selectedIconPath": "images/icecream4.png",
-        "iconPath": "images/icecream1.png",
-        "pagePath": "pages/index/index",
-        "text": "首页"
+        "pagePath": "pages/index/index", 
+        "iconPath": "images/icon1_n.png",
+        "selectedIconPath": "images/icon1.png",
+        "text": "Home"
       },
       {
-        "selectedIconPath": "images/icecream4.png",
-        "iconPath": "images/icecream2.png",
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "pagePath": "pages/about/about",
+        "iconPath": "images/icon2_n.png",
+        "selectedIconPath": "images/icon2.png",
+        "text": "About"
       },
       {
-        "selectedIconPath": "images/icecream4.png",
-        "iconPath": "images/icecream3.png",
-        "pagePath": "pages/settings/settings",
-        "text": "设置"
+        "pagePath": "example/index",
+        "iconPath": "images/icon3_n.png",
+        "selectedIconPath": "images/icon3.png",
+        "text": "Demo"
       }
     ]
-  }
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
 }

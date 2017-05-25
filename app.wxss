@@ -1,11 +1,68 @@
+@import 'style/weui.wxss';
+
+page{
+    background-color: #F8F8F8;
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.page__hd {
+    padding: 40px;
+}
+.page__bd {
+    padding-bottom: 40px;
+}
+.page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page__ft{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.page__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.page__desc {
+    margin-top: 5px;
+    color: #888888;
+    text-align: left;
+    font-size: 14px;
+}
+
 /**app.wxss**/
-page{height:100%}
-.container {
-  height: 100%;
+.flex-wrap{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+  flex-direction: row;
+}
+
+page {
+  background-color: #f2f2f2;
+}
+
+.tappable:hover {
+  opacity: .6;
+}
+
+.container {
+  padding: 4px 12px;
+}
+.form-wrap {
+  border-top: 1px solid #eee;
+  margin: 12px 0;
+}
+
+.hint,
+.error {
+  display: block;
+  margin: 8px 0;
+  color: #888;
+  font-size: 14px;
+}
+.error {
+  color: #e64240;
+}

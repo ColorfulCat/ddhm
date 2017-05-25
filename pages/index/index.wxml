@@ -1,13 +1,14 @@
 <!--index.wxml-->
-<view>
-<image class="indexImage" src="{{indexImage}}" mode="aspectFit" bindtap="showImage" ></image>
+<view class="page">
+  <view class="page__hd">
+    <image class="indexImage" src="{{indexImage}}" mode="aspectFit" bindtap="previewImage"></image>
 
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <button class="buttontop tappable"  ontap="gotoFace">进入人脸识别</button>
-  <view class="usermotto">
-    <!--<text class="user-motto">{{motto}}</text>-->
+    <view bindtap="bindViewTap" class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">你好！{{userInfo.nickName}}</text>
+    </view>
+    <view class="button-sp-area buttontop">
+      <button class="weui-btn tappable" type="primary" plain="true" ontap="gotoFace">进入人脸识别</button>
+    </view>
   </view>
 </view>
