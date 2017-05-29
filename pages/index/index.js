@@ -5,6 +5,7 @@ Page({
   data: {
     motto: 'Hello World',
     indexImage: '',
+    items: [],
     userInfo: {}
   },
   //事件处理函数
@@ -35,15 +36,27 @@ Page({
       })
     })
     wx.request({
-      url: 'https://gank.io/api/data/%E7%A6%8F%E5%88%A9/1/1', 
+      url: 'https://gank.io/api/data/%E7%A6%8F%E5%88%A9/15/1', 
       data: {},
       method: 'GET', 
       // header: {},  
       success: function (res) { 
         console.log('success') 
+        if (res == null ||
+          res.data == null ||
+          res.data.results == null ||
+          res.data.results.length <= 0) {
+          console.error('success but data is error');
+          return;
+        }
+        var itemList = [];
+        for (var i = 0; i < res.data.results.length; i++){
+          itemList.push(res.data.results[i].url)
+        }
+
         //更新数据
         that.setData({
-          indexImage: res.data.results[0].url
+          items: itemList
         })
       },
       fail: function () {
@@ -57,7 +70,7 @@ Page({
   previewImage: function (e) {
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
-      urls: [this.data.indexImage] // 需要预览的图片http链接列表
+      urls: this.data.items // 需要预览的图片http链接列表
     })
   }
 })
