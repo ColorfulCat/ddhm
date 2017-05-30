@@ -6,33 +6,25 @@ Page({
     motto: 'Hello World',
     indexImage: '',
     items: [],
-    chats:[
-      {
-        url:"../../images/cat_0.png",
-        isCat:true,
-        title:"大花猫",
-        content:"哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！1111111234"
-      },
-      {
-        url: "../../images/cat_1.png",
-        isCat: false,
-        title: "哈哈哈",
-        content: "哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！"
-      },
-      {
-        url: "../../images/cat_2.png",
-        isCat: true,
-        title: "哈哈哈",
-        content: "hello world"
-      }
-    ],
-    userInfo: {}
+    userInfo: {},
+    chats:[]
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  addChatItem: function(isCat, avatarUrl, content, imageUrl) {
+    console.log("addChatItem !")
+    var tempChatItem = {}
+    tempChatItem.avatar = isCat ? "../../images/cat_2.png" : this.data.userInfo.avatarUrl;
+    tempChatItem.isCat = isCat;
+    tempChatItem.title = "";
+    tempChatItem.image = imageUrl;
+    tempChatItem.content = content;
+
+    var tempChats = this.data.chats;
+    tempChats.push(tempChatItem);
+    //更新数据
+    this.setData({
+      chats: tempChats
+    });
   },
   //事件处理函数
   gotoFace: function () {
@@ -49,15 +41,24 @@ Page({
       that.setData({
         userInfo:userInfo
       })
-    })
+      that.addChatItem(true, userInfo.avatarUrl, "你好啊！" + userInfo.nickName, "")
+      that.addChatItem(false, "", "会我hiHi好  ", "")
+      that.addChatItem(true, "", "啦啦啦啦啦绿啦啦啦啦啦绿了了了解多少发家里束带结发了 了但是荆防颗粒世纪东方技术点水电费", "")
+      that.addChatItem(false, "", "啦啦啦啦啦绿啦啦啦啦啦绿了了了解多少发家里束带结发了 了但是荆防颗粒世纪东方技术点水电费", "")
+      that.getImage();
+    }) 
     
+    
+  },
+  getImage:function(){
+    var that = this
     wx.request({
-      url: 'https://gank.io/api/data/%E7%A6%8F%E5%88%A9/15/1', 
+      url: 'https://gank.io/api/data/%E7%A6%8F%E5%88%A9/15/1',
       data: {},
-      method: 'GET', 
+      method: 'GET',
       // header: {},  
-      success: function (res) { 
-        console.log('success') 
+      success: function (res) {
+        console.log('success')
         if (res == null ||
           res.data == null ||
           res.data.results == null ||
@@ -66,13 +67,14 @@ Page({
           return;
         }
         var itemList = [];
-        for (var i = 0; i < res.data.results.length; i++){
+        for (var i = 0; i < res.data.results.length; i++) {
           itemList.push(res.data.results[i].url)
         }
         //更新数据
         that.setData({
           items: itemList
         })
+        that.addChatItem(true, "", "", itemList[0])
       },
       fail: function () {
         console.log('fail')
@@ -85,7 +87,7 @@ Page({
   previewImage: function (e) {
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
-      urls: this.data.items // 需要预览的图片http链接列表
+      urls: [e.currentTarget.dataset.id] // 需要预览的图片http链接列表
     })
   }
 })
