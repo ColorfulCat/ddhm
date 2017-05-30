@@ -6,17 +6,32 @@ Page({
     motto: 'Hello World',
     indexImage: '',
     items: [],
+    chats:[
+      {
+        url:"../../images/cat_0.png",
+        isCat:true,
+        title:"大花猫",
+        content:"哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！1111111234"
+      },
+      {
+        url: "../../images/cat_1.png",
+        isCat: false,
+        title: "哈哈哈",
+        content: "哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！哈喽哇！"
+      },
+      {
+        url: "../../images/cat_2.png",
+        isCat: true,
+        title: "哈哈哈",
+        content: "hello world"
+      }
+    ],
     userInfo: {}
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
-    })
-  },
-  showImage: function () {
-    wx.navigateTo({
-      url: '../image/image?indexImage=' + this.data.indexImage
     })
   },
   //事件处理函数
@@ -35,6 +50,7 @@ Page({
         userInfo:userInfo
       })
     })
+    
     wx.request({
       url: 'https://gank.io/api/data/%E7%A6%8F%E5%88%A9/15/1', 
       data: {},
@@ -53,7 +69,6 @@ Page({
         for (var i = 0; i < res.data.results.length; i++){
           itemList.push(res.data.results[i].url)
         }
-
         //更新数据
         that.setData({
           items: itemList

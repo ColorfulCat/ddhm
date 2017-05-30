@@ -1,4 +1,83 @@
 /**index.wxss**/
+.chat-cell-left {
+  width: 100%;
+  height: auto;
+  background-color: grey;
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items:flex-start;
+  
+}
+.cat-avatar-left {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 16rpx;
+}
+
+.cat-content-left {
+  width: auto;
+  margin: 16rpx;
+  font-size: 12px;
+  background-color: green;
+}
+
+.chat-cell-right {
+  width: 100%;
+  height: auto;
+  background-color: darkcyan;
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-end;
+  align-items:flex-end;
+  
+}
+.cat-avatar-right {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 16rpx;
+  border-radius: 50%;
+}
+
+.cat-content-right {
+  width: auto;
+  margin: 16rpx;
+  font-size: 12px;
+  background-color: red;
+}
+
+.chat-list {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 100rpx;
+}
+
+.input-layout {
+  width: 100%;
+  height: 80rpx;
+  margin: 0 auto;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items:center;
+}
+
+.input-view {
+  padding: 0rpx, 16rpx;
+  width: 80%;
+  height: 80rpx;
+  background: #0f0;
+}
+
+.input-button {
+  width: 20%;
+  height: 80rpx;
+  background: #f00;
+  text-align: center;
+}
 
 .userinfo {
   display: flex;
@@ -6,7 +85,7 @@
   align-items: center;
 }
 
-.indexImage { 
+.indexImage {
   width: 100%;
   height: 200px;
 }
@@ -27,5 +106,6 @@
 }
 
 .buttontop {
-  margin-top: 30px; 
+  margin-top: 30px;
 }
+

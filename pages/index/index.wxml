@@ -1,17 +1,36 @@
 <!--index.wxml-->
 <view class="page">
-  <view class="page__hd">
-    <!--<view class="card" wx:for="{{items}}">-->
-      <image class="indexImage" src="{{items[0]}}" mode="aspectFit" bindtap="previewImage"></image>
+  <view class="chat-list">
+    <view wx:for="{{chats}}">
 
-      
-    <!--</view>-->
-    <view bindtap="bindViewTap" class="userinfo">
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">你好！{{userInfo.nickName}} {{(userInfo.gender == 1)?"大帅哥":"大美女"}}</text>
-    </view>
-    <view class="button-sp-area buttontop">
-      <button class="weui-btn tappable" type="primary" plain="true" ontap="gotoFace">进入人脸识别</button>
+      <view wx:if="{{item.isCat == true}}" class="chat-cell-left">
+        <image class="cat-avatar-left" src="{{item.url}}"></image>
+        <text class="cat-content-left">{{item.content}}</text>
+      </view>
+
+      <view wx:if="{{item.isCat == false}}" class="chat-cell-right">
+        <text class="cat-content-right">{{item.content}}</text>
+        <image class="cat-avatar-right" src="{{item.url}}"></image>
+      </view>
+
     </view>
   </view>
+
+
+
+
+  <image class="indexImage" src="{{items[0]}}" mode="aspectFit" bindtap="previewImage"></image>
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">你好！{{userInfo.nickName}} {{(userInfo.gender == 1)?"大帅哥":"大美女"}}</text>
+  </view>
+  <view class="button-sp-area buttontop">
+    <button class="weui-btn tappable" type="primary" plain="true" ontap="gotoFace">进入人脸识别</button>
+  </view>
+
+  <view class="input-layout">
+      <input class="input-view" placeholder="请输入IQ分数" />
+      <view class="input-button">发送</view>
+  </view>
+
 </view>
