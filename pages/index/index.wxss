@@ -1,43 +1,68 @@
 /**index.wxss**/
+
+.chat-page {
+  width: 100%;
+  height: 100%;
+}
+
 .chat-list {
-   background-color: #eeeeee;
-   padding-bottom: 100rpx;
-   padding-top: 16rpx;
+  padding-bottom: 120rpx;
+}
+
+.header-layout {
+  width: 100%;
+  height: 240rpx;
+  background-color: #3f51b5;
+}
+
+.chat-content {
+  padding-top: 36rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 50rpx;
+  border-radius: 50%;
 }
 
 .chat-cell-left {
   width: 100%;
   height: auto;
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items:flex-start;
-  
+  align-items: flex-start;
 }
+
 .cat-avatar-left {
   width: 80rpx;
   height: 80rpx;
   margin: 12rpx;
   min-width: 80rpx;
 }
+
 .cat-content-left {
   width: auto;
   height: auto;
   margin-top: 16rpx;
-  margin-right: 100rpx; 
+  margin-right: 100rpx;
   margin-bottom: 16rpx;
 }
+
 .cat-content-left-layout {
   background-color: white;
   padding: 16rpx;
   border-radius: 5rpx;
-  min-height: 60rpx;
-  min-width: 60rpx;
+  min-height: 50rpx;
+  min-width: 50rpx;
 }
+
 .cat-content-left-text {
   font-size: 12px;
   color: black;
 }
+
 .cat-image {
   width: 200rpx;
   height: 200rpx;
@@ -46,11 +71,12 @@
 .chat-cell-right {
   width: 100%;
   height: auto;
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   justify-content: flex-end;
-  align-items:flex-end;
+  align-items: flex-end;
 }
+
 .cat-avatar-right {
   width: 80rpx;
   height: 80rpx;
@@ -62,17 +88,18 @@
   width: auto;
   height: auto;
   margin-top: 16rpx;
-  margin-left: 100rpx; 
+  margin-left: 100rpx;
   margin-bottom: 16rpx;
-  
 }
+
 .cat-content-right-layout {
-  background-color: #00897b;
+  background-color: #66bb6a;
   padding: 16rpx;
   border-radius: 5rpx;
-  min-height: 60rpx;
-  min-width: 60rpx;
+  min-height: 50rpx;
+  min-width: 50rpx;
 }
+
 .cat-content-right-text {
   font-size: 12px;
   color: white;
@@ -80,30 +107,36 @@
 
 .input-layout {
   width: 100%;
-  height: 80rpx;
+  height: 100rpx;
   margin: 0 auto;
-  background: #fff;
+  background: #3f51b5;
   position: fixed;
   bottom: 0;
-  display:flex;
-  flex-direction:row;
+  padding: 10rpx, 10rpx;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 }
 
 .input-view {
-  padding: 0rpx, 16rpx;
-  width: 80%;
+  width: 100%;
   height: 80rpx;
+  padding-left: 10rpx;
+  margin-left: 10rpx;
   background: white;
+  border-radius: 5rpx;
+  font-size: 13px;
 }
 
 .input-button {
   width: 20%;
-  height: 80rpx;
-  padding-top: 10rpx;
+  height: 62rpx;
+  padding-top: 20rpx;
   font-size: 13px;
   text-align: center;
+  background-color: #3f51b5;
+  color: white;
 }
 
 .userinfo {
@@ -115,13 +148,6 @@
 .indexImage {
   width: 100%;
   height: 200px;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
 }
 
 .userinfo-nickname {
@@ -136,3 +162,8 @@
   margin-top: 30px;
 }
 
+/*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}*/

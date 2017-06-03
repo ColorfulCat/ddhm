@@ -1,14 +1,30 @@
 <!--index.wxml-->
-<view class="page">
-  <view class="chat-list">
-    <block wx:for="{{chats}}" wx:key="item" >
+<view class="chat-page">
+  <scroll-view 
+  class="chat-list" 
+  scroll-y="true"
+  scroll-into-view="{{toView}}"
+  scroll-top="{{scrollTop}}"
+  scroll-with-animation="true">
+
+  <view class="header-layout">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  </view>
+
+    <block class="chat-content" wx:for="{{chats}}" wx:key="item" >
 
       <view wx:if="{{item.isCat == true}}" class="chat-cell-left">
         <image class="cat-avatar-left" mode="aspectFit" src="{{item.avatar}}"></image>
         <view class="cat-content-left">
           <view class="cat-content-left-layout">
-            <text class="cat-content-left-text">{{item.content}}</text>
-            <image wx:if="{{item.image}}" class="cat-image" mode="aspectFit" src="{{item.image}}"></image>
+            <text class="cat-content-left-text">{{item.content}}</text> 
+            <image 
+            wx:if="{{item.image}}"
+            bindtap="previewImage"       
+            data-url="{{item.image}}"
+            class="cat-image" 
+            mode="aspectFit" 
+            src="{{item.image}}"></image>
           </view>
         </view>
       </view>
@@ -25,11 +41,12 @@
       </view>
 
     </block>
-  </view>
+    <view id="list-bottom"></view>
+  </scroll-view>
 
 
 
-
+<!--
   <image class="indexImage" src="{{items[0]}}" mode="aspectFit" bindtap="previewImage" data-id="{{items[0]}}"></image>
   <view bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
@@ -37,11 +54,16 @@
   </view>
   <view class="button-sp-area buttontop">
     <button class="weui-btn tappable" type="primary" plain="true" ontap="gotoFace">进入人脸识别</button>
-  </view>
+  </view>-->
 
   <view class="input-layout">
-    <input class="input-view" placeholder="请输入IQ分数" />
-    <text class="input-button">发送</text>
+    <input 
+     class="input-view" 
+     value="{{inputValue}}"
+     placeholder="请输入您要说的话"
+     bindinput="bindKeyInput"
+      />
+    <text class="input-button tappable" ontap="sendButtonClick">发送</text>
   </view>
 
 </view>

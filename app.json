@@ -2,11 +2,6 @@
   "pages": [
 
     "pages/index/index",
-    "pages/about/about",
-    "pages/todos/todos",
-    "pages/user/user",
-    "pages/pay/pay",
-    "pages/setting/setting",
     "pages/face/face",
 
     "example/index",
@@ -43,37 +38,11 @@
     "example/searchbar/searchbar"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "大大花猫",
-    "navigationBarBackgroundColor": "#f8f8f8",
-    "backgroundColor": "#f8f8f8"
+    "navigationBarBackgroundColor": "#3f51b5",
+    "backgroundColor": "#3f51b5"
   }, 
-  "tabBar": { 
-    "color": "#ddd", 
-    "selectedColor": "#3cc51f", 
-    "backgroundColor": "#fff", 
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/index/index", 
-        "iconPath": "images/icon1_n.png",
-        "selectedIconPath": "images/icon1.png",
-        "text": "Home"
-      },
-      {
-        "pagePath": "pages/about/about",
-        "iconPath": "images/icon2_n.png",
-        "selectedIconPath": "images/icon2.png",
-        "text": "About"
-      },
-      {
-        "pagePath": "example/index",
-        "iconPath": "images/icon3_n.png",
-        "selectedIconPath": "images/icon3.png",
-        "text": "Demo"
-      }
-    ]
-  },
   "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,
