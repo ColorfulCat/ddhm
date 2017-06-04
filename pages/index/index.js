@@ -46,7 +46,8 @@ Page({
         userInfo: userInfo
       })
       that.addChatItem(true, "../../images/cat_0.png", "你好啊！" + userInfo.nickName, "")
-      that.getImage();
+      that.addChatItem(true, "../../images/cat_shy.png", userInfo.gender == 1 ? "小帅哥，天气这么热，送你个妹子吧~" :"妞，天气这么热，送你个帅哥养养眼吧~", "")
+      that.sendMessage(userInfo.gender == 1 ? "给我一张美女图片":"给我一张帅哥图片")
     })
 
 
@@ -121,6 +122,14 @@ Page({
     that.addChatItem(false, "", that.data.inputValue, "")
     that.scrollBottom()
 
+    that.sendMessage(that.data.inputValue)
+    //更新数据
+    that.setData({
+      inputValue: ""
+    })
+  },
+  sendMessage: function(message){
+    var that = this
     // 对话
     wx.request({
       url: "https://idc.emotibot.com/api/ApiKey/openapi.php",
@@ -128,7 +137,7 @@ Page({
         cmd: "chat",
         appid: "3f04846805cbbf1bd9d06aa6a2bc06f6",
         userid: that.data.userInfo.nickName,
-        text: that.data.inputValue
+        text: message
       },
       method: 'GET',
       // header: {},  
@@ -169,10 +178,6 @@ Page({
       complete: function () {
         console.log('complete')
       }
-    })
-    //更新数据
-    that.setData({
-      inputValue: ""
     })
   },
   //通过设置滚动条位置实现画面滚动  
