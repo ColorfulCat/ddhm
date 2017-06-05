@@ -1,30 +1,19 @@
 <!--index.wxml-->
 <view class="chat-page">
-  <scroll-view 
-  class="chat-list" 
-  scroll-y="true"
-  scroll-into-view="{{toView}}"
-  scroll-top="{{scrollTop}}"
-  scroll-with-animation="true">
+  <scroll-view class="chat-list" scroll-y="true" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" scroll-with-animation="true">
 
-  <view class="header-layout">
-  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-  </view>
+    <view class="header-layout">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
 
-    <block class="chat-content" wx:for="{{chats}}" wx:key="item" >
+    <block class="chat-content" wx:for="{{chats}}" wx:key="item">
 
       <view wx:if="{{item.isCat == true}}" class="chat-cell-left">
         <image class="cat-avatar-left" mode="aspectFit" src="{{item.avatar}}"></image>
         <view class="cat-content-left">
           <view class="cat-content-left-layout">
-            <text class="cat-content-left-text">{{item.content}}</text> 
-            <image 
-            wx:if="{{item.image}}"
-            bindtap="previewImage"       
-            data-url="{{item.image}}"
-            class="cat-image" 
-            mode="aspectFit" 
-            src="{{item.image}}"></image>
+            <text class="cat-content-left-text">{{item.content}}</text>
+            <image wx:if="{{item.image}}" bindtap="previewImage" data-url="{{item.image}}" class="cat-image" mode="aspectFit" src="{{item.image}}"></image>
           </view>
         </view>
       </view>
@@ -33,7 +22,7 @@
         <view class="cat-content-right">
           <view class="cat-content-right-layout">
             <text class="cat-content-right-text">{{item.content}}</text>
-            <image wx:if="{{item.image}}" class="cat-image" mode="aspectFit" src="{{item.image}}"></image>
+            <image wx:if="{{item.image}}" bindtap="previewImage" data-url="{{item.image}}" class="cat-image" mode="aspectFit" src="{{item.image}}"></image>
           </view>
         </view>
         <image class="cat-avatar-right" mode="aspectFit" src="{{item.avatar}}"></image>
@@ -44,25 +33,10 @@
     <view id="list-bottom"></view>
   </scroll-view>
 
-
-
-<!--
-  <image class="indexImage" src="{{items[0]}}" mode="aspectFit" bindtap="previewImage" data-id="{{items[0]}}"></image>
-  <view bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">你好！{{userInfo.nickName}} {{(userInfo.gender == 1)?"大帅哥":"大美女"}}</text>
-  </view>
-  <view class="button-sp-area buttontop">
-    <button class="weui-btn tappable" type="primary" plain="true" ontap="gotoFace">进入人脸识别</button>
-  </view>-->
-
   <view class="input-layout">
-    <input 
-     class="input-view" 
-     value="{{inputValue}}"
-     placeholder="请输入您要说的话"
-     bindinput="bindKeyInput"
-      />
+    <image class="input-image tappable" src="../../images/input-image.png"
+    ontap="chooseimage"></image>
+    <input class="input-view" value="{{inputValue}}" placeholder="请输入您要说的话" bindinput="bindKeyInput" confirm-type="send" />
     <text class="input-button tappable" ontap="sendButtonClick">发送</text>
   </view>
 

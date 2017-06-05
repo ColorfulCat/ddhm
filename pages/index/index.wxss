@@ -119,6 +119,13 @@
   align-items: center;
 }
 
+.input-image {
+  height: 70rpx;
+  width:70rpx;
+  min-width: 70rpx;
+  margin: 6rpx 6rpx;
+}
+
 .input-view {
   width: 100%;
   height: 80rpx;
