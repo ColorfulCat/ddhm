@@ -6,38 +6,22 @@
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     </view>
 
-    <block class="chat-content" wx:for="{{chats}}" wx:key="item">
+    <block wx:for="{{items}}" wx:key="item">
+      <view class="item-layout">
+        <text class="item-text">{{item.content}}</text>
 
-      <view wx:if="{{item.isCat == true}}" class="chat-cell-left">
-        <image class="cat-avatar-left" mode="aspectFit" src="{{item.avatar}}"></image>
-        <view class="cat-content-left">
-          <view class="cat-content-left-layout">
-            <text class="cat-content-left-text">{{item.content}}</text>
-            <image wx:if="{{item.image}}" bindtap="previewImage" data-url="{{item.image}}" class="cat-image" mode="aspectFit" src="{{item.image}}"></image>
-          </view>
+        <view wx:if="{{item.format == 'image'}}">
+          <image class="item-image" mode="aspectFit" src="https:{{item.high_loc}}" data-url="https:{{item.high_loc}}" bindtap="previewImage"></image>
         </view>
-      </view>
 
-      <view wx:if="{{item.isCat == false}}" class="chat-cell-right">
-        <view class="cat-content-right">
-          <view class="cat-content-right-layout">
-            <text class="cat-content-right-text">{{item.content}}</text>
-            <image wx:if="{{item.image}}" bindtap="previewImage" data-url="{{item.image}}" class="cat-image" mode="aspectFit" src="{{item.image}}"></image>
-          </view>
+        <view wx:if="{{item.format == 'video'}}">
+          <video src="https:{{item.high_loc}}" controls></video>
         </view>
-        <image class="cat-avatar-right" mode="aspectFit" src="{{item.avatar}}"></image>
-
       </view>
 
     </block>
-    <view id="list-bottom"></view>
+    <view>
+    <button class="list-bottom" ontap="loadMore">点击加载更多</button>
+     </view>
   </scroll-view>
-
-  <view class="input-layout">
-    <image class="input-image tappable" src="../../images/input-image.png"
-    ontap="chooseimage"></image>
-    <input class="input-view" value="{{inputValue}}" placeholder="请输入您要说的话" bindinput="bindKeyInput" confirm-type="send" />
-    <text class="input-button tappable" ontap="sendButtonClick">发送</text>
-  </view>
-
 </view>
