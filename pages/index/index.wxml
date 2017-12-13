@@ -1,43 +1,7 @@
 <!--index.wxml-->
-<view class="chat-page">
-  <scroll-view class="chat-list" scroll-y="true" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" scroll-with-animation="true">
-
-    <view class="header-layout">
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    </view>
-
-    <block class="chat-content" wx:for="{{chats}}" wx:key="item">
-
-      <view wx:if="{{item.isCat == true}}" class="chat-cell-left">
-        <image class="cat-avatar-left" mode="aspectFit" src="{{item.avatar}}"></image>
-        <view class="cat-content-left">
-          <view class="cat-content-left-layout">
-            <text class="cat-content-left-text">{{item.content}}</text>
-            <image wx:if="{{item.image}}" bindtap="previewImage" data-url="{{item.image}}" class="cat-image" mode="aspectFit" src="{{item.image}}"></image>
-          </view>
-        </view>
-      </view>
-
-      <view wx:if="{{item.isCat == false}}" class="chat-cell-right">
-        <view class="cat-content-right">
-          <view class="cat-content-right-layout">
-            <text class="cat-content-right-text">{{item.content}}</text>
-            <image wx:if="{{item.image}}" bindtap="previewImage" data-url="{{item.image}}" class="cat-image" mode="aspectFit" src="{{item.image}}"></image>
-          </view>
-        </view>
-        <image class="cat-avatar-right" mode="aspectFit" src="{{item.avatar}}"></image>
-
-      </view>
-
-    </block>
-    <view id="list-bottom"></view>
-  </scroll-view>
-
-  <view class="input-layout">
-    <image class="input-image tappable" src="../../images/input-image.png"
-    ontap="chooseimage"></image>
-    <input class="input-view" value="{{inputValue}}" placeholder="请输入您要说的话" bindinput="bindKeyInput" confirm-type="send" />
-    <text class="input-button tappable" ontap="sendButtonClick">发送</text>
-  </view>
-
+<view class="page">
+    <image class="bgImage" mode="aspectFit" src="../../images/bg.jpg"
+    background-size="cover"></image>
+    
+    
 </view>
